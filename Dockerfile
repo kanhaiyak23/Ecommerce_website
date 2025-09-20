@@ -1,26 +1,26 @@
-# Use Node.js 18 as base image
-FROM node:18-alpine
+# # Use Node.js 18 as base image
+# FROM node:18-alpine
 
-# Set working directory
-WORKDIR /app
+# # Set working directory
+# WORKDIR /app
 
-# Copy package files
-COPY package*.json ./
+# # Copy package files
+# COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production
+# # Install dependencies
+# RUN npm ci --only=production
 
-# Copy source code
-COPY . .
+# # Copy source code
+# COPY . .
 
-# Build React app
-RUN npm run build
+# # Build React app
+# RUN npm run build
 
-# Expose port
-EXPOSE 5001
+# # Expose port
+# EXPOSE 5001
 
-# Set environment variables
-ENV NODE_ENV=production
+# # Set environment variables
+# ENV NODE_ENV=production
 
-# Start the application
-CMD ["npm", "run", "start:prod"]
+# # Start the application
+# CMD ["npm", "run", "start:prod"]

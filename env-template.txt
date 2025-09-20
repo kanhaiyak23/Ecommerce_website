@@ -1,0 +1,28 @@
+# Environment Variables Template
+# Copy this content to a .env file in your project root
+# Replace the dummy values with your actual PhonePe credentials
+
+# Node Environment
+NODE_ENV=development
+
+# PhonePe Configuration (DUMMY VALUES - REPLACE WITH REAL ONES)
+PHONEPE_MERCHANT_ID=PGTESTPAYUAT
+PHONEPE_SALT_KEY=099eb0cd-02cf-4e2a-8aca-3e6c6aff0399
+PHONEPE_SALT_INDEX=1
+PHONEPE_ENVIRONMENT=SANDBOX
+
+# Application URLs
+FRONTEND_URL=http://localhost:3000
+REACT_APP_API_URL=http://localhost:5001
+
+# Server Configuration
+PORT=5001
+
+# Note: These are dummy/test values for PhonePe sandbox
+# For production, you need to get real credentials from PhonePe Business dashboard
+# Sign up at: https://business.phonepe.com/
+
+# Instructions:
+# 1. Copy this content to a new file named .env
+# 2. Replace the dummy values with your actual PhonePe credentials
+# 3. Never commit the .env file to version control

@@ -7,21 +7,6 @@
       "config": {
         "distDir": "build"
       }
-    },
-    {
-      "src": "api/payment/initiate.js",
-      "use": "@vercel/node",
-      "config": { "maxDuration": 30 }
-    },
-    {
-      "src": "api/payment/callback.js",
-      "use": "@vercel/node",
-      "config": { "maxDuration": 30 }
-    },
-    {
-      "src": "api/payment/status.js",
-      "use": "@vercel/node",
-      "config": { "maxDuration": 30 }
     }
   ],
   "routes": [
@@ -33,5 +18,16 @@
       "src": "/(.*)",
       "dest": "/build/$1"
     }
-  ]
+  ],
+  "functions": {
+    "api/payment/initiate.js": {
+      "maxDuration": 30
+    },
+    "api/payment/callback.js": {
+      "maxDuration": 30
+    },
+    "api/payment/status.js": {
+      "maxDuration": 30
+    }
+  }
 }

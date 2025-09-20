@@ -1,6 +1,6 @@
 # T-Shirt E-Commerce Store with PhonePe Payment Integration
 
-A complete React.js e-commerce application for selling t-shirts with PhonePe payment gateway integration. Users can browse products, add items to cart, and complete purchases with secure payment processing.
+A complete React.js e-commerce application for selling t-shirts with PhonePe payment gateway integration. Built with Vercel serverless functions for seamless deployment. Users can browse products, add items to cart, and complete purchases with secure payment processing.
 
 ## Features
 
@@ -12,6 +12,7 @@ A complete React.js e-commerce application for selling t-shirts with PhonePe pay
 - 📱 **Mobile-Friendly**: Optimized for all device sizes
 - ✅ **Order Management**: Complete checkout flow with order tracking
 - 🚀 **Real-time Updates**: Live cart updates and payment status
+- ⚡ **Serverless Architecture**: Built with Vercel serverless functions for optimal performance
 
 ## Prerequisites
 
@@ -77,36 +78,36 @@ Before running this application, make sure you have:
 
 ### Development Mode
 
-1. **Start the backend server** (Terminal 1):
-   ```bash
-   node server.js
-   ```
-   The server will run on `http://localhost:5000`
-
-2. **Start the React frontend** (Terminal 2):
+1. **Start the React frontend**:
    ```bash
    npm start
    ```
    The frontend will run on `http://localhost:3000`
 
-3. **Open your browser** and navigate to `http://localhost:3000`
+2. **Open your browser** and navigate to `http://localhost:3000`
 
-### Production Mode
+### Production Mode (Vercel Deployment)
 
 1. **Build the React app**:
    ```bash
    npm run build
    ```
 
-2. **Start the production server**:
+2. **Deploy to Vercel**:
    ```bash
-   node server.js
+   vercel --prod
    ```
 
 ## Project Structure
 
 ```
 payment_gateway/
+├── api/                            # Vercel serverless functions
+│   ├── payment/
+│   │   ├── initiate.js            # Payment initiation function
+│   │   ├── callback.js            # Payment callback function
+│   │   └── status.js              # Payment status function
+│   └── health.js                  # Health check function
 ├── public/
 │   └── index.html
 ├── src/
@@ -127,18 +128,20 @@ payment_gateway/
 │   │   └── CartContext.js          # Shopping cart state management
 │   ├── data/
 │   │   └── products.js             # Product data and utilities
+│   ├── config/
+│   │   └── api.js                  # API configuration
 │   ├── App.js                      # Main app component with routing
 │   ├── App.css                     # App styles
 │   ├── index.js                    # React entry point
 │   └── index.css                   # Global styles
-├── server.js                       # Backend server with PhonePe integration
+├── vercel.json                     # Vercel configuration
 ├── package.json                    # Dependencies and scripts
 └── README.md                       # This file
 ```
 
 ## API Endpoints
 
-### Backend API Routes
+### Vercel Serverless Functions
 
 - `POST /api/payment/initiate` - Initiate payment with PhonePe
 - `POST /api/payment/callback` - Handle payment callback from PhonePe

@@ -1,4 +1,4 @@
-# Environment Variables Template
+# Environment Variables Template for Vercel Deployment
 # Copy this content to a .env file in your project root
 # Replace the dummy values with your actual PhonePe credentials
 
@@ -11,12 +11,8 @@ PHONEPE_SALT_KEY=099eb0cd-02cf-4e2a-8aca-3e6c6aff0399
 PHONEPE_SALT_INDEX=1
 PHONEPE_ENVIRONMENT=SANDBOX
 
-# Application URLs
-FRONTEND_URL=http://localhost:3000
-REACT_APP_API_URL=http://localhost:5001
-
-# Server Configuration
-PORT=5001
+# Application URLs (for Vercel deployment)
+FRONTEND_URL=https://your-app.vercel.app
 
 # Note: These are dummy/test values for PhonePe sandbox
 # For production, you need to get real credentials from PhonePe Business dashboard
@@ -26,3 +22,4 @@ PORT=5001
 # 1. Copy this content to a new file named .env
 # 2. Replace the dummy values with your actual PhonePe credentials
 # 3. Never commit the .env file to version control
+# 4. For Vercel deployment, set these as environment variables in Vercel dashboard

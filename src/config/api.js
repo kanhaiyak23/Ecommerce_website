@@ -1,8 +1,6 @@
-// API Configuration
-// For Vercel deployment, API calls will be relative to the same domain
-// For local development, use the local server
-const API_BASE_URL = process.env.REACT_APP_API_URL || 
-  (process.env.NODE_ENV === 'production' ? '' : 'http://localhost:5001');
+// API Configuration for Vercel Serverless Functions
+// API calls are relative to the same domain (no separate server needed)
+const API_BASE_URL = process.env.REACT_APP_API_URL || '';
 
 export const API_ENDPOINTS = {
   PAYMENT_INITIATE: `${API_BASE_URL}/api/payment/initiate`,

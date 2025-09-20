@@ -2,10 +2,6 @@
   "version": 2,
   "builds": [
     {
-      "src": "server.js",
-      "use": "@vercel/node"
-    },
-    {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
@@ -16,11 +12,22 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/server.js"
+      "dest": "/api/$1"
     },
     {
       "src": "/(.*)",
       "dest": "/build/$1"
     }
-  ]
+  ],
+  "functions": {
+    "api/payment/initiate.js": {
+      "maxDuration": 30
+    },
+    "api/payment/callback.js": {
+      "maxDuration": 30
+    },
+    "api/payment/status.js": {
+      "maxDuration": 30
+    }
+  }
 }

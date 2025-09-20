@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const path = require('path');
+// const fs = require('fs');
+// const path = require('path');
 
 console.log('🚀 PhonePe Payment Gateway Setup');
 console.log('================================\n');

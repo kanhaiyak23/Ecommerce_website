@@ -4,30 +4,11 @@
     {
       "src": "package.json",
       "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
+      "config": { "distDir": "build" }
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/build/$1"
-    }
-  ],
-  "functions": {
-    "api/payment/initiate.js": {
-      "maxDuration": 30
-    },
-    "api/payment/callback.js": {
-      "maxDuration": 30
-    },
-    "api/payment/status.js": {
-      "maxDuration": 30
-    }
-  }
+    { "src": "/api/(.*)", "dest": "/api/$1" },
+    { "src": "/(.*)", "dest": "/build/$1" }
+  ]
 }
